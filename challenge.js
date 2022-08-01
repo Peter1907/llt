@@ -15,6 +15,8 @@ class LinkedList {
   add(number) {
     if (!this.head) {
       this.head = new Node(number);
+      this.size += 1;
+      return;
     }
     let current = this.head;
     while (current.next) {
