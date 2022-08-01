@@ -62,15 +62,15 @@ class LinkedList {
       }
       previous.next = newNode;
       newNode.next = current;
+      this.size += 1;
     }
-    this.size += 1;
   }
 
   remove(index) {
     let current = this.head;
     let previous;
     let count = 0;
-    if (number > this.size) {
+    if (index > this.size) {
       return;
     }
     if (index === 0) {
