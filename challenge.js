@@ -43,6 +43,7 @@ class LinkedList {
     let current = this.head;
     let count = 0;
     let previous;
+    let newNode = new Node(number);
     if (index > this.size) {
       return;
     }
@@ -51,14 +52,15 @@ class LinkedList {
       this.size += 1;
       return;
     }
-    while (count < index) {
-      previous = current;
-      current = current.next;
-      count += 1;
+    else{
+      while (count < index) {
+        previous = current;
+        current = current.next;
+        count += 1;
+      }
+      previous.next = newNode;
+      newNode.next = current;
     }
-    let newNode = new Node(number);
-    previous.next = newNode;
-    newNode.next = current;
     this.size += 1;
   }
 
